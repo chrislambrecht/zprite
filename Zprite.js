@@ -4,8 +4,6 @@
 //    Prototype has methods to display (animated) image
 //
 //  Usage: <destination obj> = Quick_Sprite(options);
-//    where options is an object with the following properties:
-//      .img (img obj);     .frame_w & frame_h (frame width & height)
 //      
  /////////////////////////////////////////////////////////
 
