@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang='en'>
+    <head>
+        <script src='../Zprite.js'></script>
+        <script>
+            window.addEventListener('DOMContentLoaded', init);
+            
+            function init(){
+                var canvas = document.getElementById('the_canvas');
+                var ctx = canvas.getContext('2d');
+                var ele_zprite;
+                
+                var image = new Image();
+                image.src = 'elephant.png';
+                image.onload = function(){
+                    var options = {
+                        
+                        // height and width of source image (not displayed frame)
+                        img_width: 800,
+                        img_height: 200,
+                        
+                        // height and width of individual frame
+                        frame_h: 200,
+                        frame_w: 200,
+                        
+                        // x- and y-position on canvas where sprite should be drawn
+                        xPos: 0,
+                        yPos: 0,
+                        
+                        // draw_cycles_per_frame is the number of times a Zprite's draw() method is called before the current frame
+                        // is advanced to the next.
+                        // frame_count is just the total number of frames in the sprite animation
+                        draw_cycles_per_frame: 4,
+                        frame_count: 4,
+                        
+                        ctx: ctx
+                        
+                    }
+                    
+                    ele_zprite = new Zprite(image, options);
+                    
+                    loop();
+                };
+                
+                function loop(){
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ele_zprite.draw();
+                    
+                    window.requestAnimationFrame(loop);
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <h3>Zprite Example</h3>
+        <canvas id='the_canvas' width='300' height='300'></canvas>
+    </body>
+</html>
