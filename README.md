@@ -54,13 +54,17 @@ var options = {
 ele_zprite = new Zprite(image, options);
 ```
 
-Finally, call the Zprite objects draw() method repeatedly in your loop. After the draw() method is called the number of times equal to the Zprite's `draw_cycles_per_frame` property. the displayed frame will advance.
+Finally, call the Zprite object's draw() method repeatedly in your loop. After the draw() method is called the number of times equal to the Zprite's `draw_cycles_per_frame` property. the displayed frame will advance.
 
 ````javascript
 function loop(){
+    // clear the canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // call Zprite object's draw method
     ele_zprite.draw();
     
+    // do it again! 
     window.requestAnimationFrame(loop);
 }
 ```
