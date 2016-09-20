@@ -46,7 +46,7 @@ var options = {
     frame_count: 4,
     
     // ctx property is the information stored in the ctx variable above (returned from getContext('2d'))
-    this.ctx: options.ctx
+    ctx: options
                         
 }
 
