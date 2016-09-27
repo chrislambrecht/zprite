@@ -28,6 +28,9 @@ function Zprite(img, options){
   this.frame_w = options.frame_w;
   this.frame_count = options.frame_count;
   
+  this.scale_w = options.scale_w || options.frame_w;
+  this.scale_h = options.scale_w || options.frame_h;
+  
   this.xPos = options.xPos;
   this.yPos = options.yPos;
   
@@ -64,7 +67,7 @@ Zprite.prototype.draw = function(){
   //       one row.                                          
   //                                                         |
   //                                                         v
-  this.ctx.drawImage(this.img, this.frame_w * this.current_frame, 0, this.frame_w, this.frame_h, this.xPos, this.yPos, this.frame_w, this.frame_h);
+  this.ctx.drawImage(this.img, this.frame_w * this.current_frame, 0, this.frame_w, this.frame_h, this.xPos, this.yPos, this.scale_w, this.scale_h);
   
   //increase call count AFTER draw
   this.draw_call_counter++;
