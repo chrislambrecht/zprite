@@ -35,6 +35,11 @@ var options = {
     frame_h: 200,
     frame_w: 200,
     
+    // actual display size (scale) of the sprite.
+    // if not defined, these properties default to frame_w and frame_h, respectively
+    scale_w: 200,
+    scale_h: 200,
+    
     // x- and y-position on canvas where sprite should be drawn
     xPos: 0,
     yPos: 0,
