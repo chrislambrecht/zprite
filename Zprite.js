@@ -9,7 +9,8 @@
 
 function Zprite(img, options){
   if (!img || !options){
-    throw new Error("Xprite constructor must be passed (img obj, options obj)");
+    throw new Error("Error! Zprite constructor must be passed (img obj, options obj)");
+    return false;
   }
   
   //TO-DO: bad data handling
